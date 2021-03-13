@@ -1,4 +1,3 @@
-# test
+# $HOWER THOUGHT$
 
-this is go huskiesa!
-poopoo
+This is supposed to be an application that measures your shower usage and motivates users to take shorter showers!
