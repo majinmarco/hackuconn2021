@@ -4,7 +4,7 @@ from spotifyclient import SpotifyClient
 
 
 def main():
-    spotify_client = SpotifyClient("BQClwHyBtzl8QieshB0AbJk8AmRyK_hpdDlBBwntCJLmnDNtozD_2fvC5UinDgQ2Nt8siQpoNx67SYA8OcX-3dn1nBVUh9Kiyj6D3nmh_NRrCcJVPyM0kRZUCzisEgjfIhx_RBpznIO76Iu-hdP4V8gOkh8Whd1afvEG2z_fuRvEVVTkQsrLnpg-fPAGicVB5bXE2roaS3txI_pl6b6Qdho4IaCRn1OQ86FgSpShLK6JMqpP17rrEVzSPHNN_1RiLB6b4kgMJT94vkmYyE3rkxaJ",
+    spotify_client = SpotifyClient("BQDqY4ixxoGQp8tKJvjIDsyJfeyWhVSbSh2Uki4PXSyHqpmN4msEAwHSpSuV2z2S4Pl1CqSFeh8lSk6jdW7FZ1B8bkbLtI4i9zclf_rXlxZ1XRpl6zuXSdAQluSL_h9MLZvzz_M5ZDwPOCX-LYm01tkEONjTGHb6KXUqup2CeQXIXgL70bE44Dhnd44VRbXRbVqOjhXKa-Hpzz973-ATjHxS2hM_a3qzhFyQVseUGVZ3blF4w3--fAjOhDU8gW83WaCLBKe8cc0ZC6AtMTrzcHZH",
                                    "1230853848")
 
     # get last played tracks

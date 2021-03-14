@@ -44,6 +44,28 @@ class SpotifyClient:
         response_json = response.json()
         tracks = [Track(track["name"], track["id"], track["artists"][0]["name"]) for
                   track in response_json["tracks"]]
+
+        # init w time
+        track_ids = [track.id for track in tracks]
+        urls = [f"https://api.spotify.com/v1/audio-features/{id}" for id in track_ids]
+        responses = [requests.get(url).json() for url in urls]
+        # response_jsons = [response.json() for response in responses]
+        #audio_features = [jayson["duration_ms"]/1000 for jayson in responses]
+        print(responses)
+        """
+        for track in tracks:
+            track.duration = response_json[16]/1000
+
+        # sort for time
+        track_times = 0 # in minutes
+        for track in tracks: track_times += track.duration/60
+        
+        for track in tracks:
+            track_times-=(track.duration/60)
+            tracks.remove(track)
+            if 10<=track_times<=11:
+                break
+        """
         return tracks
 
     def create_playlist(self, name):
