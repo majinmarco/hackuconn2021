@@ -1,14 +1,26 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import random
-from mergesort import merge_sort
-import json
+#import json
+#import time
+
+"""
+def timer(t):
+    t = int(t) * 60
+    while t:
+        timer = f"{t//60}:{t%60}"
+        print(timer, end='\r')
+        time.sleep(1)
+        t-=1
+    #stop_music
+"""
 
 def make_shower_playlist(length):
-    scope = 'playlist-modify-public'
+    scope = 'playlist-modify-public user-read-recently-played'
     username = '1230853848'
 
-    token = SpotifyOAuth(client_id="e219391ab9f741e6b4f6d1a54a5910a4", client_secret="3afc7a77d5f344418295213b88abf87c", redirect_uri="http://127.0.0.1:8080/",scope='user-read-recently-played', username=username)
+    token = SpotifyOAuth(client_id="e219391ab9f741e6b4f6d1a54a5910a4", client_secret="3afc7a77d5f344418295213b88abf87c", 
+                        redirect_uri="http://127.0.0.1:8080/",scope=scope, username=username)
     spotifyObject = spotipy.Spotify(auth_manager=token)
 
     recently_listened = spotifyObject.current_user_recently_played()
@@ -51,10 +63,8 @@ def make_shower_playlist(length):
         except:
             recommended_songs_bpm = recommended_songs_bpm[:x] + recommended_songs_bpm[x+1:]
 
-
-    print(recommended_songs_bpm)
-
-    spotifyObject.user_playlist_create(user=username, name=f"{length}-Minute Shower Playlist", public=True, description="Songs to shower to!")
+    spotifyObject.user_playlist_create(user=username, name=f"{length}-Minute Shower Playlist",
+                                       public=True, description="Songs to shower to!")
 
     final_track_list = [recommended_songs_bpm[track]["uri"] for track in range(len(recommended_songs_bpm))]
 
@@ -63,7 +73,22 @@ def make_shower_playlist(length):
 
     spotifyObject.user_playlist_add_tracks(user=username, playlist_id=playlist, tracks=final_track_list)
 
+
+"""
+def start_music(playlist):
+    scope = 'user-modify-playback-state'
+    username = '1230853848'
+
+    token = SpotifyOAuth(client_id="e219391ab9f741e6b4f6d1a54a5910a4", client_secret="3afc7a77d5f344418295213b88abf87c", redirect_uri="http://127.0.0.1:8080/",scope='user-modify-playback-state', username=username)
+    spotifyObject = spotipy.Spotify(auth_manager=token)
+    
+    print(playlist['uri'])
+    #spotifyObject.start_playback(playlist["uri"])
+"""
+
+#def stop_music_delete_playlist()
+
 if __name__ == "__main__":
     make_shower_playlist(input("How long will your shower be? "))
-
+    #timer(t)
     # Then make a function that plays it, deletes it after playing
