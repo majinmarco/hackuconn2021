@@ -5,7 +5,7 @@ import json
 scope = 'playlist-modify-public'
 username = '1230853848'
 
-token = SpotifyOAuth(client_id="e219391ab9f741e6b4f6d1a54a5910a4", client_secret="3afc7a77d5f344418295213b88abf87c", redirect_uri="http://127.0.0.1:8080/",scope=scope, username=username)
+token = SpotifyOAuth(client_id="", client_secret="", redirect_uri="http://127.0.0.1:8080/",scope=scope, username=username)
 spotifyObject = spotipy.Spotify(auth_manager=token)
 
 #create the playlist

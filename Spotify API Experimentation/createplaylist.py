@@ -4,8 +4,8 @@ from spotifyclient import SpotifyClient
 
 
 def main():
-    spotify_client = SpotifyClient("BQDqY4ixxoGQp8tKJvjIDsyJfeyWhVSbSh2Uki4PXSyHqpmN4msEAwHSpSuV2z2S4Pl1CqSFeh8lSk6jdW7FZ1B8bkbLtI4i9zclf_rXlxZ1XRpl6zuXSdAQluSL_h9MLZvzz_M5ZDwPOCX-LYm01tkEONjTGHb6KXUqup2CeQXIXgL70bE44Dhnd44VRbXRbVqOjhXKa-Hpzz973-ATjHxS2hM_a3qzhFyQVseUGVZ3blF4w3--fAjOhDU8gW83WaCLBKe8cc0ZC6AtMTrzcHZH",
-                                   "1230853848")
+    spotify_client = SpotifyClient("",
+                                   "")
 
     # get last played tracks
     num_tracks_to_visualise = int(input("How many tracks would you like to visualise? "))
