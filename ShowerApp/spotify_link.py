@@ -89,6 +89,10 @@ def start_music(playlist):
 #def stop_music_delete_playlist()
 
 if __name__ == "__main__":
-    make_shower_playlist(input("How long will your shower be? "))
+    try:
+        make_shower_playlist(input("How long will your shower be? "))
+        print("Successful!")
+    except:
+        print("Unsuccessful.")
     #timer(t)
     # Then make a function that plays it, deletes it after playing
